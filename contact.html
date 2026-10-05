@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <img src="images/TECHZONE.png" alt="logo">
+        <h1><span>TechZone Electronics</span></h1>
+        <div class="bar">
+        <button class="menubar" onclick="GetNav()"><img src="images/1935494a-3ff5-496a-9989-e975504fb746-removebg-preview.png"></button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="offers.html">Special Offers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <fieldset>
+            <legend>Contact Us</legend>
+            <form action="submit_form.php" method="post"><br><br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+            </fieldset>
+        </div>
+    <div class="footer">
+        <p>123 High Street 
+            Leicester 
+            LE1 1AA 
+            
+             </p>
+             
+        <p>Telephone: 0116 123 4567 <br>
+            Email: info@techzone.example</p>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
