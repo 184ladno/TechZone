@@ -123,7 +123,7 @@
     }
     .menu ul li a:hover{
         background-color: rgb(166, 204, 166);
-        transform: scale(0.5);
+        transform: scale(1.2);
     }
     .content{
         height:auto;
@@ -136,10 +136,11 @@
         position: relative;
         margin-top: 8vh;
     }
-    .hero img{
+    .content .hero img{
         display: block;
         width: 100%;
         padding: 0;
+        z-index: auto;
     }
     .explore{
         position: absolute;
