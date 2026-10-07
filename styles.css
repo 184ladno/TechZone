@@ -208,9 +208,6 @@
         transition: transform 0.2s ease, 0.2s ease;
         z-index: 1;
     }
-    .img{
-     
-    }
 
     .slide h2{
         margin-top: 3vh;
