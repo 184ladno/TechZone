@@ -17,7 +17,7 @@
         z-index:-1;
     }
     .header{
-        padding-top: 1%;
+        padding-top:0;
         width:100%;
         height:8vh;
         background-color:rgb(198, 223, 198);
@@ -28,7 +28,13 @@
         position: relative;
         align-items: center;
         position:fixed;
+        z-index: 2;
+        padding-top:1vh;
 
+    }
+    .page .header{
+        top: 0;
+        left: 0;
     }
     .header::before{
         content:"";
@@ -44,13 +50,44 @@
         padding-bottom: 1vh;
         padding-top: none;
         float: left;
+        padding:8px;
     }
     .header h1{
-        display:flex;
+        display:block;
         color:darkslategray;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+         -webkit-text-fill-color: currentColor;
+        font-family: Georgia, "Times New Roman", serif;
         margin: 0 auto;
-        font-size: 4vh;
+        font-size: 3em;
+    }
+    .header .site-title{
+        position: relative;
+        z-index: 1;
+        flex: 0 1 auto;
+        margin: 0;
+        font-size: clamp(1rem, 2.2vw, 1.55rem);
+        line-height: 1.1;
+        white-space: nowrap;
+    }
+    .header .site-title a{
+        display: inline-block;
+        padding: 0.5em 0.7em;
+        border: 1px solid none;
+        border-radius: 999px;
+        color: darkslategray;
+        text-decoration: none;
+        -webkit-text-fill-color: currentColor;
+        transition: background-color 180ms ease, transform 180ms ease;
+    }
+    .header .site-title a:hover{
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(121, 155, 128, 0.34);
+        border-radius: 999px;
+        transform: translateY(-1px);
+    }
+    .header .site-title a:focus-visible{
+        outline: 3px solid #52735c;
+        outline-offset: 3px;
     }
 
     .menu{
@@ -61,7 +98,7 @@
         position: absolute;
         right:0;
         border-radius: 4vh;
-        margin-top: 10.5vh;
+        margin-top: 57vh;
     }
     .menubar{
         display: block;
@@ -73,6 +110,7 @@
         background: rgba(255,255,255,0.45);
         cursor: pointer;
         overflow: hidden;
+        margin-left: 57vh;
     }
     .menubar img{
         width: 100%;
@@ -129,12 +167,14 @@
         height:auto;
         
     }
+    .page .content{
+        padding-top: 14vh;
+    }
     .contact-page .content{
         flex:1;  
     }
     .hero{
         position: relative;
-        margin-top: 8vh;
     }
     .content .hero img{
         display: block;
@@ -177,7 +217,7 @@
         z-index:-1;
     }
     .footer{
-        background-color:rgba(103, 141, 65, 0.747);
+        background-color:#e1ecdf;
         text-align: center;
         width: auto;
         height: auto;
@@ -185,70 +225,116 @@
         justify-content: center;
     }
     .carousel{
-        position:relative;
-        margin:2em auto;
+        position: relative;
+        width: min(calc(100% - 40px), 700px);
+        margin: 3rem auto 4rem;
+        color: #34483b;
         text-align: center;
+        font-family: "Trebuchet MS", Arial, sans-serif;
     }
- 
-    .slide.active{
-        display: block;
+    .carousel-eyebrow{
+        margin: 0;
+        color: #52735c;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
     }
-    .img img:hover{
-        background-color: rgba(227, 248, 227, 0.699);
-        transform: scale(1.06);
+    .carousel-heading{
+        margin: 0.12em 0 0.65em;
+        color: #284a3b;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.04em;
     }
-
-    .img img{
-        margin-top: 1vh;
-        width: 60vh;
-        height: 40vh;
-        object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-        transition: transform 0.2s ease, 0.2s ease;
-        z-index: 1;
-    }
-
-    .slide h2{
-        margin-top: 3vh;
-        font-size: 1.4em;
-        z-index: 3;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        width: 20vh;
-        translate: 430%;
-    }
-    .arrow {
-        position: absolute;
-        top: 170px;           
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        border: none;
-        border-radius: 50%;
-        background: #4a5568;
-        color: #fff;
-        font-size: 1rem;
-        cursor: pointer;
-    }
-    .arrow:hover { background: #1a202c; }
-    .prev { left: 0; }
-    .next { right: 0; }
-
-    .viewport {
+    .carousel .viewport{
         overflow: hidden;
         width: 100%;
+        border-radius: 18px;
     }
-    .track {
+    .carousel .track{
         display: flex;
         width: 100%;
         transition: transform 0.5s ease;
     }
-
-    .slide {
+    .carousel .slide{
         flex: 0 0 100%;
         width: 100%;
+        text-align: left;
+    }
+    .carousel-card{
+        overflow: hidden;
+        border: 1px solid rgba(112, 151, 119, 0.28);
+        border-radius: 18px;
+        background: rgba(250, 253, 249, 0.96);
+        box-shadow: 0 8px 24px rgba(40, 70, 50, 0.1);
+    }
+    .carousel .carousel-image{
+        display: grid;
+        height: 230px;
+        width:auto;
+        place-items: center;
+        overflow: hidden;
+        background: linear-gradient(145deg, #eff5ed, #e1ecdf);
+    }
+    .page .content .carousel .carousel-image img{
         display: block;
-        text-align: center;
+        width: min(86%, 270px);
+        height: 180px;
+        max-width: 100%;
+        padding: 0;
+        object-fit: contain;
+        z-index: auto;
+        transition: transform 250ms ease;
+    }
+    .carousel .carousel-image:hover img{
+        transform: scale(1.04);
+    }
+    .carousel-copy{
+        padding: 20px 24px 24px;
+    }
+    .carousel .product-category{
+        margin: 0 0 8px;
+        color: #628068;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+    }
+    .carousel-copy h3{
+        margin: 0 0 9px;
+        color: #2e4a3d;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.4rem;
+    }
+    .carousel-copy > p:last-child{
+        margin: 0;
+        color: #5b6a60;
+        line-height: 1.5;
+    }
+    .arrow {
+        position: absolute;
+        top: 58%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(112, 151, 119, 0.35);
+        border-radius: 50%;
+        background: #fafdF9;
+        color: #345b43;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(40, 70, 50, 0.14);
+        transition: background-color 180ms ease, transform 180ms ease;
+    }
+    .arrow:hover{
+        background: #e1ecdf;
+        transform: translateY(-50%) scale(1.06);
+    }
+    .carousel .prev{
+        left: -21px;
+    }
+    .carousel .next{
+        right: -21px;
     }
     .contact-form{
         display: flex;
@@ -294,4 +380,122 @@ padding: 1vh;
 font-size: 2vh;
 margin-left: 4vh;
    
+    }
+    form{
+        margin-top:20vh;
+    }
+
+    .page .content.products-content{
+        top:20%;
+        box-sizing: border-box;
+        width: min(100%, 1160px);
+        height: 94vh;
+        margin:0 auto;
+        padding: 15vh 28px 64px;
+        color: #34483b;
+        font-family: "Trebuchet MS", Arial, sans-serif;
+        box-shadow: 1px 10px 15px rgba(145, 151, 139, 0.747);
+    }
+    .products-content .products-eyebrow{
+        margin: 0;
+        color: #52735c;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .products-content > h1{
+        margin: 0.12em 0 0.12em;
+        background: none;
+        color: #284a3b;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        -webkit-text-fill-color: currentColor;
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: -0.04em;
+    }
+    .products-content .products-intro{
+        max-width: 520px;
+        margin: 0 auto 2.5rem;
+        color: #52665a;
+        text-align: center;
+        line-height: 1.6;
+    }
+    .products-content .product-grid{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+    }
+    .products-content .product-card{
+        overflow: hidden;
+        border: 1px solid rgba(112, 151, 119, 0.28);
+        border-radius: 18px;
+        background: rgba(250, 253, 249, 0.94);
+        box-shadow: 0 8px 24px rgba(40, 70, 50, 0.1);
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+    .products-content .product-card:hover{
+        transform: translateY(-6px);
+        border-color: rgba(82, 115, 92, 0.5);
+        box-shadow: 0 16px 32px rgba(40, 70, 50, 0.16);
+    }
+    .products-content .product-image{
+        display: grid;
+        height: 230px;
+        place-items: center;
+        overflow: hidden;
+        background: linear-gradient(145deg, #eff5ed, #e1ecdf);
+    }
+    .page .content.products-content .product-grid .product-image > img{
+        display: block;
+        width: min(86%, 270px);
+        height: 180px;
+        max-width: 100%;
+        padding: 0;
+        object-fit: contain;
+        z-index: auto;
+        transition: transform 250ms ease;
+    }
+    .products-content .product-card:hover .product-image img{
+        transform: scale(1.04);
+    }
+    .products-content .product-card-copy{
+        padding: 20px 22px 24px;
+    }
+    .products-content .product-card .product-category{
+        margin: 0 0 8px;
+        color: #628068;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+    }
+    .products-content .product-card h2{
+        margin: 0 0 9px;
+        color: #2e4a3d;
+        font-size: 1.35rem;
+        font-family: Georgia, "Times New Roman", serif;
+    }
+    .products-content .product-card-copy > p:last-child{
+        margin: 0;
+        color: #5b6a60;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 850px){
+        .products-content .product-grid{
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    @media (max-width: 600px){
+        .page .content.products-content{
+            padding: 14vh 18px 44px;
+        }
+        .products-content .product-grid{
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+        .products-content .product-image{
+            height: 210px;
+        }
     }

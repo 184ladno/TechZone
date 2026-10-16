@@ -4,64 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <title>Home | TechZone Electronics</title>
+    <link href="styles.css?v=site-header-20261016" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body class="page">
     <div class="header">
         <img src="images/TECHZONE.png" alt="logo">
-        <h1><span>TechZone Electronics</span></h1>
+        <h1 class="site-title"><a href="home%201.html">TechZone Electronics</a></h1>
         <div class="bar">
         <button class="menubar" onclick="GetNav()"><img src="images/1935494a-3ff5-496a-9989-e975504fb746-removebg-preview.png"></button>
         </div>
-    </div>
-    <div class="content">
         <div class="menu">
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="home%201.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="offers.html">Special Offers</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
+    </div>
+    <div class="content">
+        
     <div class="hero">
         <img src="images/Tech_and_Gadgets_2.jpg" alt="Tech and gadgets">
         <div class="explore"><a href="products.html">Explore More</a></div>
     </div>
     <h1>Smarter Tech. Better Living.</h1>
-<section class="carousel">
-
+<section class="carousel" aria-label="Featured products">
+    <p class="carousel-eyebrow">A few of our favourites</p>
+    <h2 class="carousel-heading">Featured Picks</h2>
     <div class="viewport">
         <div class="track">
-
             <div class="slide">
-                <div class="img">
-                    <a href="products.html"><img src="images/Screenshot_2-10-2026_144250_www.lenovo.com-removebg-preview.png" alt="Lenovo"></a>
-                    <h2>Lenovo</h2>
-                </div>
+                <article class="carousel-card">
+                    <a class="carousel-image" href="products.html">
+                        <img src="images/Screenshot_2-10-2026_144250_www.lenovo.com-removebg-preview.png" alt="Lenovo ThinkBook laptop">
+                    </a>
+                    <div class="carousel-copy">
+                        <p class="product-category">COMPUTING</p>
+                        <h3>Lenovo ThinkBook</h3>
+                        <p>A sleek laptop for work, study, and everyday use.</p>
+                    </div>
+                </article>
             </div>
-
             <div class="slide">
-                <div class="img">
-                    <img src="images/Screenshot_2-10-2026_144547_www.bing.com.jpeg" alt="Bing">
-                    <h2>Bing</h2>
-                </div>
+                <article class="carousel-card">
+                    <a class="carousel-image" href="products.html">
+                        <img src="images/Screenshot_2-10-2026_144547_www.bing.com.jpeg" alt="Brown Ray-Ban sunglasses">
+                    </a>
+                    <div class="carousel-copy">
+                        <p class="product-category">ACCESSORIES</p>
+                        <h3>Ray-Ban Sunglasses</h3>
+                        <p>Classic frames with a modern look.</p>
+                    </div>
+                </article>
             </div>
-
             <div class="slide">
-                <div class="img">
-                    <img src="images/Screenshot_2-10-2026_144843_www.next.co.uk.jpeg" alt="Next">
-                    <h2>Next</h2>
-                </div>
+                <article class="carousel-card">
+                    <a class="carousel-image" href="products.html">
+                        <img src="images/Screenshot_2-10-2026_144843_www.next.co.uk.jpeg" alt="Sage green Next electric kettle">
+                    </a>
+                    <div class="carousel-copy">
+                        <p class="product-category">HOME</p>
+                        <h3>Next Electric Kettle</h3>
+                        <p>A simple, stylish addition to your kitchen.</p>
+                    </div>
+                </article>
             </div>
-
         </div>
     </div>
-
-    <button class="arrow prev" aria-label="Previous">&#10094;</button>
-    <button class="arrow next" aria-label="Next">&#10095;</button>
-
+    <button class="arrow prev" aria-label="Previous featured product">&#10094;</button>
+    <button class="arrow next" aria-label="Next featured product">&#10095;</button>
 </section>
     <div class="footer">
         <p>123 High Street 
@@ -76,8 +90,6 @@
 </body>
 <script src="script.js"></script>
 </html>
-
-
 
 
 
