@@ -81,6 +81,18 @@
         color: #5b6a60;
         line-height: 1.6;
     }
+    .offers-content .about-value a{
+        display: inline-block;
+        margin-top: 14px;
+        color: #456f52;
+        font-weight: 700;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+    }
+    .offers-content .about-value a:focus-visible{
+        outline: 3px solid rgba(82, 115, 92, 0.45);
+        outline-offset: 3px;
+    }
     @media (max-width: 700px){
         .about-content{
             padding: 14vh 18px 44px;
@@ -326,12 +338,14 @@
         z-index:-1;
     }
     .footer{
-        background-color:#e1ecdf;
+        background-color:#dff3db;
         text-align: center;
         width: auto;
         height: auto;
         display: flex;
         justify-content: center;
+        color: #34483b;
+        font-family: "Trebuchet MS", Arial, sans-serif;
     }
     .carousel{
         position: relative;
